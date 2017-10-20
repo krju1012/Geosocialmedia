@@ -1,0 +1,81 @@
+\documentclass{iscram}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{listings}
+\usetikzlibrary{shapes,arrows}
+\usetikzlibrary{positioning}
+\usetikzlibrary{calc}
+\usepackage[utf8]{inputenc}
+\usepackage{todonotes}
+\usepackage{biblatex}
+
+
+% Default fixed font does not support bold face
+\DeclareFixedFont{\ttb}{T1}{txtt}{bx}{n}{12} % for bold
+\DeclareFixedFont{\ttm}{T1}{txtt}{m}{n}{12}  % for normal
+
+% Custom colors
+\usepackage{color}
+\definecolor{deepblue}{rgb}{0,0,0.5}
+\definecolor{deepred}{rgb}{0.6,0,0}
+\definecolor{deepgreen}{rgb}{0,0.5,0}
+
+% Python style for highlighting
+\newcommand\pythonstyle{\lstset{
+numbers=left, 
+numberstyle=\small, numbersep=5pt,
+%identifierstyle={\color{brown}},
+language=Python,
+basicstyle=\ttm,
+otherkeywords={self},             % Add keywords here
+keywordstyle=\ttb\color{deepblue},
+emph={MyClass,__init__},          % Custom highlighting
+emphstyle=\ttb\color{deepred},    % Custom highlighting style
+stringstyle=\color{deepgreen},
+frame=single,
+framexleftmargin=0pt,
+                         % Any extra options here
+showstringspaces=false            % 
+}}
+
+
+% Python environment
+\lstnewenvironment{python}[1][]
+{
+\pythonstyle
+\lstset{#1}
+}
+{}
+
+% Python for inline
+\newcommand\pythoninline[1]{{\pythonstyle\lstinline!#1!}}
+
+
+
+\iscramset{
+	footer/line 1={Flood coverage analysis based on spatial distributions of Flickr messages},
+	footer/line 2={Spatial analysis of 
+geosocial media data - Heidelberg, Germany, September 2017},
+		footer/line 3={Julian Krauth},
+	title={Research Proposal: Flood coverage analysis based on spatial distributions of Flickr messages},
+	short title={Final Assignment Spatial analysis of 
+geosocial media data},
+	author={
+		short name={J. Krauth},
+		full name={Julian Krauth},
+		affiliation={Heidelberg University
+		\\Study course: Geography
+		\\j.krauth@uni-heidelberg.de},
+	},
+}
+\addbibresource{example.bib}
+\begin{document}
+\maketitle
+\keywords{Social-Media, Flickr, Flood, AGI, Data analysis}
+\section{Introduction}
+Flood-related disasters have significant impact on population and infrastructure (most common disaster type globally from 2006 to 2014), therefore further research could contribute to valuable improvements in terms of mitigation and preparation processes for disaster risk management. In recent years, the amount of collected data has increased exponentially which content can be interpreted to create beneficial aids for disaster management. This assignment proposes research with ambient geographic information (AGI) of Flickr, an image hosting platform where community members can share their pictures with the public. With help of this generated content a method could be created which contributes to the public disaster management systems by appending additional information about flood-related areas where other data-sources are not sufficient for comprehensive social or infrastructural actions.   
+\include{Problem_Statement}
+\include{Objectives}
+\include{Preliminary_Literature_Review}
+\include{Methodology}
+\end{document}
